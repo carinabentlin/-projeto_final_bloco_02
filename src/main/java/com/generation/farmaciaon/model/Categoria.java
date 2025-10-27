@@ -1,0 +1,22 @@
+package com.generation.farmaciaon.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity
+@Table(name = "tb_categorias")
+public class Categoria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "A descrição é obrigatória")
+    @Size(min = 3, max = 100, message = "A descrição deve ter entre 3 e 100 caracteres")
+    private String descricao;  // exemplos: Analgésicos, Antibióticos, Cosméticos
+}
