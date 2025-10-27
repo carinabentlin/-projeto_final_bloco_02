@@ -19,11 +19,11 @@ public class Produto {
     @Size(min = 2, max = 255, message = "O nome deve ter entre 2 e 255 caracteres")
     private String nome;
 
-    // Ex.: comprimido, cápsula, xarope, pomada (campo livre e opcional)
+    // Ex.: comprimido, cápsula, xarope, pomada (opcional)
     @Size(max = 50, message = "O tipo deve ter no máximo 50 caracteres")
     private String tipo;
 
-    // *** Relacionamento (inserido após 'tipo') ***
+    // Relacionamento com Categoria
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     @JsonIgnoreProperties("produtos")
@@ -49,67 +49,31 @@ public class Produto {
     // Opcional: validade do produto
     private LocalDate dataValidade;
 
-    // ===== Getters e Setters (recriados no final) =====
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // ===== Getters e Setters =====
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 
-    public String getLaboratorio() {
-        return laboratorio;
-    }
-    public void setLaboratorio(String laboratorio) {
-        this.laboratorio = laboratorio;
-    }
+    public String getLaboratorio() { return laboratorio; }
+    public void setLaboratorio(String laboratorio) { this.laboratorio = laboratorio; }
 
-    public BigDecimal getPreco() {
-        return preco;
-    }
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
+    public BigDecimal getPreco() { return preco; }
+    public void setPreco(BigDecimal preco) { this.preco = preco; }
 
-    public Integer getEstoque() {
-        return estoque;
-    }
-    public void setEstoque(Integer estoque) {
-        this.estoque = estoque;
-    }
+    public Integer getEstoque() { return estoque; }
+    public void setEstoque(Integer estoque) { this.estoque = estoque; }
 
-    public String getImagem() {
-        return imagem;
-    }
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
-    }
+    public String getImagem() { return imagem; }
+    public void setImagem(String imagem) { this.imagem = imagem; }
 
-    public LocalDate getDataValidade() {
-        return dataValidade;
-    }
-    public void setDataValidade(LocalDate dataValidade) {
-        this.dataValidade = dataValidade;
-    }
+    public LocalDate getDataValidade() { return dataValidade; }
+    public void setDataValidade(LocalDate dataValidade) { this.dataValidade = dataValidade; }
 }

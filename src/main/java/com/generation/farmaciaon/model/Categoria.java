@@ -14,12 +14,22 @@ public class Categoria {
 
     @NotBlank(message = "A descrição é obrigatória")
     @Size(min = 3, max = 100, message = "A descrição deve ter entre 3 e 100 caracteres")
-    private String descricao;
+    private String descricao;  // exemplos: Analgésicos, Antibióticos, Cosméticos
 
-    // Getters e Setters (básico id e descrição)
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }
